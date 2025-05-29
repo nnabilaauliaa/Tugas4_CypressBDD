@@ -19,8 +19,9 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies (ignore platform issues)
+        run: npm install --legacy-peer-deps
+
 
       - name: Run Cypress tests
         run: npx cypress run
